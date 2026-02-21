@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --surface: #ffffff;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --accent: #0f172a;
-}
-
-.dark {
   --background: #0b1120;
   --foreground: #e2e8f0;
   --surface: #0f172a;
   --muted: #94a3b8;
   --border: #1e293b;
   --accent: #e2e8f0;
+}
+
+.light {
+  --background: #f8fafc;
+  --foreground: #0b1220;
+  --surface: #ffffff;
+  --muted: #334155;
+  --border: #e2e8f0;
+  --accent: #0f172a;
 }
 
 @theme inline {
@@ -35,6 +35,30 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+.light .text-slate-500 {
+  color: #475569;
+}
+
+.light .text-slate-600 {
+  color: #334155;
+}
+
+.light .text-slate-700 {
+  color: #1f2937;
+}
+
+.light .text-slate-800 {
+  color: #111827;
+}
+
+.light .text-slate-400 {
+  color: #64748b;
+}
+
+.light .text-slate-300 {
+  color: #64748b;
+}
+
 .panel {
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -48,11 +72,19 @@ body {
   color: #1e293b;
 }
 
+.light .section-title {
+  color: #0f172a;
+}
+
 .field-label {
   display: block;
   font-size: 0.8125rem;
   font-weight: 500;
   color: #334155;
+}
+
+.light .field-label {
+  color: #1f2937;
 }
 
 .field-input {
@@ -110,6 +142,10 @@ body {
 
 .data-table thead tr {
   color: #64748b;
+}
+
+.light .data-table thead tr {
+  color: #475569;
 }
 
 .data-table th {

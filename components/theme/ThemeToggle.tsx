@@ -4,11 +4,11 @@ import { useEffect, useState } from "react";
 
 function getStoredTheme(): "light" | "dark" {
   if (typeof window === "undefined") {
-    return "light";
+    return "dark";
   }
 
   const stored = window.localStorage.getItem("yosemite-theme");
-  return stored === "dark" ? "dark" : "light";
+  return stored === "light" ? "light" : "dark";
 }
 
 export function ThemeToggle() {
@@ -20,6 +20,7 @@ export function ThemeToggle() {
     }
 
     document.documentElement.classList.toggle("dark", theme === "dark");
+    document.documentElement.classList.toggle("light", theme === "light");
     window.localStorage.setItem("yosemite-theme", theme);
   }, [theme]);
 
