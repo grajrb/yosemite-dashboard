@@ -11,7 +11,7 @@
 
 .light {
   --background: #f8fafc;
-  --foreground: #0b1220;
+  --foreground: #000000;
   --surface: #ffffff;
   --muted: #334155;
   --border: #e2e8f0;
@@ -36,27 +36,31 @@ body {
 }
 
 .light .text-slate-500 {
-  color: #475569;
+  color: #000000;
 }
 
 .light .text-slate-600 {
-  color: #334155;
+  color: #000000;
 }
 
 .light .text-slate-700 {
-  color: #1f2937;
+  color: #000000;
 }
 
 .light .text-slate-800 {
-  color: #111827;
+  color: #000000;
 }
 
 .light .text-slate-400 {
-  color: #64748b;
+  color: #000000;
 }
 
 .light .text-slate-300 {
-  color: #64748b;
+  color: #000000;
+}
+
+.light .text-slate-900 {
+  color: #000000;
 }
 
 .panel {
@@ -73,7 +77,7 @@ body {
 }
 
 .light .section-title {
-  color: #0f172a;
+  color: #000;
 }
 
 .field-label {
@@ -84,7 +88,7 @@ body {
 }
 
 .light .field-label {
-  color: #1f2937;
+  color: #000;
 }
 
 .field-input {
@@ -94,7 +98,6 @@ body {
   border-radius: 10px;
   padding: 0.5rem 0.625rem;
   background: #fff;
-  font-size: 0.875rem;
   color: #0f172a;
 }
 
