@@ -12,17 +12,23 @@ function getStoredTheme(): "light" | "dark" {
 }
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">(() => getStoredTheme());
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") {
+    setTheme(getStoredTheme());
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !hydrated) {
       return;
     }
 
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.documentElement.classList.toggle("light", theme === "light");
     window.localStorage.setItem("yosemite-theme", theme);
-  }, [theme]);
+  }, [theme, hydrated]);
 
   function toggleTheme() {
     const next = theme === "dark" ? "light" : "dark";
