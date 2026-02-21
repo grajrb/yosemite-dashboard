@@ -2,33 +2,17 @@
 
 import { useEffect, useState } from "react";
 
-function getStoredTheme(): "light" | "dark" {
-  if (typeof window === "undefined") {
-    return "dark";
-  }
-
-  const stored = window.localStorage.getItem("yosemite-theme");
-  return stored === "light" ? "light" : "dark";
-}
-
 export function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
-  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    setTheme(getStoredTheme());
-    setHydrated(true);
-  }, []);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !hydrated) {
+    if (typeof window === "undefined") {
       return;
     }
 
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.documentElement.classList.toggle("light", theme === "light");
-    window.localStorage.setItem("yosemite-theme", theme);
-  }, [theme, hydrated]);
+  }, [theme]);
 
   function toggleTheme() {
     const next = theme === "dark" ? "light" : "dark";

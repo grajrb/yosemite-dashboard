@@ -29,11 +29,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `(() => {
   try {
-    const stored = localStorage.getItem("yosemite-theme");
-    const theme = stored === "light" ? "light" : "dark";
     const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    root.classList.toggle("light", theme === "light");
+    root.classList.add("dark");
+    root.classList.remove("light");
   } catch {
     document.documentElement.classList.add("dark");
   }
@@ -42,6 +40,7 @@ export default function RootLayout({
         />
       </head>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
