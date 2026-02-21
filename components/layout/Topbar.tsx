@@ -12,7 +12,7 @@ export function Topbar({ title }: TopbarProps) {
       </div>
       <div className="flex items-center gap-3">
         <ThemeToggle />
-        <div className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 text-xs font-semibold text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
+        <div className="rounded-full border border-slate-900 bg-slate-900 px-3 py-1.5 text-xs font-semibold text-white dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200">
           super_admin
         </div>
       </div>
